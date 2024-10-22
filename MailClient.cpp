@@ -1,11 +1,14 @@
+#include <iostream>
 #include "src/Client/Client.h"
 
 int main(int argc, char* argv[])
 {
-    std::string ip = (argc > 1) ? argv[1] : "127.0.0.1";
-    int port = 6543;
+    if(argc < 2) {
+        std::cout << "Invalid argument count";
+        return EXIT_FAILURE;
+    }
 
-    TW_Mailer::Client client(ip, port);
+    TW_Mailer::Client client(argv[1], std::stoi(argv[2]));
 
     if (!client.connectToServer())
     {

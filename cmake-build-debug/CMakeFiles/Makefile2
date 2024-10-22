@@ -65,6 +65,7 @@ CMAKE_BINARY_DIR = /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug
 # The main recursive "all" target.
 all: CMakeFiles/tw_server.dir/all
 all: CMakeFiles/tw_client.dir/all
+all: CMakeFiles/tw_client2.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -74,6 +75,7 @@ preinstall:
 # The main recursive "clean" target.
 clean: CMakeFiles/tw_server.dir/clean
 clean: CMakeFiles/tw_client.dir/clean
+clean: CMakeFiles/tw_client2.dir/clean
 .PHONY : clean
 
 #=============================================================================
@@ -83,12 +85,12 @@ clean: CMakeFiles/tw_client.dir/clean
 CMakeFiles/tw_server.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=6,7,8,9,10 "Built target tw_server"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=13,14,15,16,17,18,19 "Built target tw_server"
 .PHONY : CMakeFiles/tw_server.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tw_server.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tw_server.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/tw_server.dir/rule
@@ -109,12 +111,12 @@ CMakeFiles/tw_server.dir/clean:
 CMakeFiles/tw_client.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5 "Built target tw_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target tw_client"
 .PHONY : CMakeFiles/tw_client.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/tw_client.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles 5
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tw_client.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles 0
 .PHONY : CMakeFiles/tw_client.dir/rule
@@ -127,6 +129,32 @@ tw_client: CMakeFiles/tw_client.dir/rule
 CMakeFiles/tw_client.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/clean
 .PHONY : CMakeFiles/tw_client.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/tw_client2.dir
+
+# All Build rule for target.
+CMakeFiles/tw_client2.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=7,8,9,10,11,12 "Built target tw_client2"
+.PHONY : CMakeFiles/tw_client2.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/tw_client2.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles 6
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/tw_client2.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/tw_client2.dir/rule
+
+# Convenience name for target.
+tw_client2: CMakeFiles/tw_client2.dir/rule
+.PHONY : tw_client2
+
+# clean rule for target.
+CMakeFiles/tw_client2.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/clean
+.PHONY : CMakeFiles/tw_client2.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

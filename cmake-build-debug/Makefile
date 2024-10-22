@@ -142,12 +142,26 @@ tw_client/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/build
 .PHONY : tw_client/fast
 
+#=============================================================================
+# Target rules for targets named tw_client2
+
+# Build rule for target.
+tw_client2: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 tw_client2
+.PHONY : tw_client2
+
+# fast build rule for target.
+tw_client2/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/build
+.PHONY : tw_client2/fast
+
 MailClient.o: MailClient.cpp.o
 .PHONY : MailClient.o
 
 # target to build an object file
 MailClient.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/MailClient.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/MailClient.cpp.o
 .PHONY : MailClient.cpp.o
 
 MailClient.i: MailClient.cpp.i
@@ -156,6 +170,7 @@ MailClient.i: MailClient.cpp.i
 # target to preprocess a source file
 MailClient.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/MailClient.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/MailClient.cpp.i
 .PHONY : MailClient.cpp.i
 
 MailClient.s: MailClient.cpp.s
@@ -164,6 +179,7 @@ MailClient.s: MailClient.cpp.s
 # target to generate assembly for a file
 MailClient.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/MailClient.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/MailClient.cpp.s
 .PHONY : MailClient.cpp.s
 
 MailServer.o: MailServer.cpp.o
@@ -196,6 +212,7 @@ src/Client/Client.o: src/Client/Client.cpp.o
 # target to build an object file
 src/Client/Client.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Client/Client.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Client/Client.cpp.o
 .PHONY : src/Client/Client.cpp.o
 
 src/Client/Client.i: src/Client/Client.cpp.i
@@ -204,6 +221,7 @@ src/Client/Client.i: src/Client/Client.cpp.i
 # target to preprocess a source file
 src/Client/Client.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Client/Client.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Client/Client.cpp.i
 .PHONY : src/Client/Client.cpp.i
 
 src/Client/Client.s: src/Client/Client.cpp.s
@@ -212,7 +230,59 @@ src/Client/Client.s: src/Client/Client.cpp.s
 # target to generate assembly for a file
 src/Client/Client.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Client/Client.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Client/Client.cpp.s
 .PHONY : src/Client/Client.cpp.s
+
+src/Client/ClientHandlers.o: src/Client/ClientHandlers.cpp.o
+.PHONY : src/Client/ClientHandlers.o
+
+# target to build an object file
+src/Client/ClientHandlers.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Client/ClientHandlers.cpp.o
+.PHONY : src/Client/ClientHandlers.cpp.o
+
+src/Client/ClientHandlers.i: src/Client/ClientHandlers.cpp.i
+.PHONY : src/Client/ClientHandlers.i
+
+# target to preprocess a source file
+src/Client/ClientHandlers.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Client/ClientHandlers.cpp.i
+.PHONY : src/Client/ClientHandlers.cpp.i
+
+src/Client/ClientHandlers.s: src/Client/ClientHandlers.cpp.s
+.PHONY : src/Client/ClientHandlers.s
+
+# target to generate assembly for a file
+src/Client/ClientHandlers.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Client/ClientHandlers.cpp.s
+.PHONY : src/Client/ClientHandlers.cpp.s
+
+src/Server/MailManager/MailManager.o: src/Server/MailManager/MailManager.cpp.o
+.PHONY : src/Server/MailManager/MailManager.o
+
+# target to build an object file
+src/Server/MailManager/MailManager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Server/MailManager/MailManager.cpp.o
+.PHONY : src/Server/MailManager/MailManager.cpp.o
+
+src/Server/MailManager/MailManager.i: src/Server/MailManager/MailManager.cpp.i
+.PHONY : src/Server/MailManager/MailManager.i
+
+# target to preprocess a source file
+src/Server/MailManager/MailManager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Server/MailManager/MailManager.cpp.i
+.PHONY : src/Server/MailManager/MailManager.cpp.i
+
+src/Server/MailManager/MailManager.s: src/Server/MailManager/MailManager.cpp.s
+.PHONY : src/Server/MailManager/MailManager.s
+
+# target to generate assembly for a file
+src/Server/MailManager/MailManager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Server/MailManager/MailManager.cpp.s
+.PHONY : src/Server/MailManager/MailManager.cpp.s
 
 src/Server/Server.o: src/Server/Server.cpp.o
 .PHONY : src/Server/Server.o
@@ -238,6 +308,30 @@ src/Server/Server.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Server/Server.cpp.s
 .PHONY : src/Server/Server.cpp.s
 
+src/Server/ServerHandler.o: src/Server/ServerHandler.cpp.o
+.PHONY : src/Server/ServerHandler.o
+
+# target to build an object file
+src/Server/ServerHandler.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Server/ServerHandler.cpp.o
+.PHONY : src/Server/ServerHandler.cpp.o
+
+src/Server/ServerHandler.i: src/Server/ServerHandler.cpp.i
+.PHONY : src/Server/ServerHandler.i
+
+# target to preprocess a source file
+src/Server/ServerHandler.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Server/ServerHandler.cpp.i
+.PHONY : src/Server/ServerHandler.cpp.i
+
+src/Server/ServerHandler.s: src/Server/ServerHandler.cpp.s
+.PHONY : src/Server/ServerHandler.s
+
+# target to generate assembly for a file
+src/Server/ServerHandler.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Server/ServerHandler.cpp.s
+.PHONY : src/Server/ServerHandler.cpp.s
+
 src/Shared/Message.o: src/Shared/Message.cpp.o
 .PHONY : src/Shared/Message.o
 
@@ -245,6 +339,7 @@ src/Shared/Message.o: src/Shared/Message.cpp.o
 src/Shared/Message.cpp.o:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Shared/Message.cpp.o
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Shared/Message.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Shared/Message.cpp.o
 .PHONY : src/Shared/Message.cpp.o
 
 src/Shared/Message.i: src/Shared/Message.cpp.i
@@ -254,6 +349,7 @@ src/Shared/Message.i: src/Shared/Message.cpp.i
 src/Shared/Message.cpp.i:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Shared/Message.cpp.i
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Shared/Message.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Shared/Message.cpp.i
 .PHONY : src/Shared/Message.cpp.i
 
 src/Shared/Message.s: src/Shared/Message.cpp.s
@@ -263,34 +359,38 @@ src/Shared/Message.s: src/Shared/Message.cpp.s
 src/Shared/Message.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Shared/Message.cpp.s
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Shared/Message.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Shared/Message.cpp.s
 .PHONY : src/Shared/Message.cpp.s
 
-src/Shared/MessageCmd.o: src/Shared/MessageCmd.cpp.o
-.PHONY : src/Shared/MessageCmd.o
+src/Shared/NetUtilities.o: src/Shared/NetUtilities.cpp.o
+.PHONY : src/Shared/NetUtilities.o
 
 # target to build an object file
-src/Shared/MessageCmd.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Shared/MessageCmd.cpp.o
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o
-.PHONY : src/Shared/MessageCmd.cpp.o
+src/Shared/NetUtilities.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Shared/NetUtilities.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Shared/NetUtilities.cpp.o
+.PHONY : src/Shared/NetUtilities.cpp.o
 
-src/Shared/MessageCmd.i: src/Shared/MessageCmd.cpp.i
-.PHONY : src/Shared/MessageCmd.i
+src/Shared/NetUtilities.i: src/Shared/NetUtilities.cpp.i
+.PHONY : src/Shared/NetUtilities.i
 
 # target to preprocess a source file
-src/Shared/MessageCmd.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Shared/MessageCmd.cpp.i
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.i
-.PHONY : src/Shared/MessageCmd.cpp.i
+src/Shared/NetUtilities.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Shared/NetUtilities.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Shared/NetUtilities.cpp.i
+.PHONY : src/Shared/NetUtilities.cpp.i
 
-src/Shared/MessageCmd.s: src/Shared/MessageCmd.cpp.s
-.PHONY : src/Shared/MessageCmd.s
+src/Shared/NetUtilities.s: src/Shared/NetUtilities.cpp.s
+.PHONY : src/Shared/NetUtilities.s
 
 # target to generate assembly for a file
-src/Shared/MessageCmd.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Shared/MessageCmd.cpp.s
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.s
-.PHONY : src/Shared/MessageCmd.cpp.s
+src/Shared/NetUtilities.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_server.dir/build.make CMakeFiles/tw_server.dir/src/Shared/NetUtilities.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client.dir/build.make CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/tw_client2.dir/build.make CMakeFiles/tw_client2.dir/src/Shared/NetUtilities.cpp.s
+.PHONY : src/Shared/NetUtilities.cpp.s
 
 # Help Target
 help:
@@ -301,6 +401,7 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... tw_client"
+	@echo "... tw_client2"
 	@echo "... tw_server"
 	@echo "... MailClient.o"
 	@echo "... MailClient.i"
@@ -311,15 +412,24 @@ help:
 	@echo "... src/Client/Client.o"
 	@echo "... src/Client/Client.i"
 	@echo "... src/Client/Client.s"
+	@echo "... src/Client/ClientHandlers.o"
+	@echo "... src/Client/ClientHandlers.i"
+	@echo "... src/Client/ClientHandlers.s"
+	@echo "... src/Server/MailManager/MailManager.o"
+	@echo "... src/Server/MailManager/MailManager.i"
+	@echo "... src/Server/MailManager/MailManager.s"
 	@echo "... src/Server/Server.o"
 	@echo "... src/Server/Server.i"
 	@echo "... src/Server/Server.s"
+	@echo "... src/Server/ServerHandler.o"
+	@echo "... src/Server/ServerHandler.i"
+	@echo "... src/Server/ServerHandler.s"
 	@echo "... src/Shared/Message.o"
 	@echo "... src/Shared/Message.i"
 	@echo "... src/Shared/Message.s"
-	@echo "... src/Shared/MessageCmd.o"
-	@echo "... src/Shared/MessageCmd.i"
-	@echo "... src/Shared/MessageCmd.s"
+	@echo "... src/Shared/NetUtilities.o"
+	@echo "... src/Shared/NetUtilities.i"
+	@echo "... src/Shared/NetUtilities.s"
 .PHONY : help
 
 

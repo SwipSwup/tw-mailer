@@ -1,7 +1,3 @@
-//
-// Created by david on 22/10/2024.
-//
-
 #ifndef TW_MAILER_CLIENT_H
 #define TW_MAILER_CLIENT_H
 
@@ -11,8 +7,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <string>
-
-#define BUF 1024
+#include "../Shared/Message.h"
 
 namespace TW_Mailer
 {
@@ -26,16 +21,10 @@ namespace TW_Mailer
 
     private:
         int client_socket;
-        struct sockaddr_in server_address;
+        struct sockaddr_in server_address{};
+        std::map<std::string, Message (*)()> commandHandler;
 
-        void sendCommand(const std::string& command);
-        std::string receiveResponse();
-
-        // Command handlers
-        void sendMail();
-        void listMessages();
-        void readMessage();
-        void deleteMessage();
+        void setupCommandHandlers();
     };
 
 } // TW_Mailer

@@ -16,7 +16,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -32,7 +33,8 @@
 					"targetIndexes" : 
 					[
 						0,
-						1
+						1,
+						2
 					]
 				}
 			],
@@ -41,14 +43,21 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "tw_client::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-tw_client-Debug-b01144e6551610d05391.json",
+					"jsonFile" : "target-tw_client-Debug-5ce69979bf095420696c.json",
 					"name" : "tw_client",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 0,
+					"id" : "tw_client2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tw_client2-Debug-f730b0ed46cb6fa127f9.json",
+					"name" : "tw_client2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
 					"id" : "tw_server::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-tw_server-Debug-700dee1858b51b07b600.json",
+					"jsonFile" : "target-tw_server-Debug-2a93007eb4d7245b22da.json",
 					"name" : "tw_server",
 					"projectIndex" : 0
 				}

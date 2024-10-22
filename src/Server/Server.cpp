@@ -1,22 +1,17 @@
-//
-// Created by david on 22/10/2024.
-//
-
 #include "Server.h"
+#include "ServerHandler.h"
+#include "../Shared/NetUtilities.h"
+#include "MailManager/MailManager.h"
 #include <iostream>
 #include <cstring>
-#include <sstream>
-#include <filesystem>
-
-namespace fs = std::filesystem;
 
 namespace TW_Mailer
 {
     bool Server::isRunning = true;
     int Server::server_socket;
-    //std::vector<std::thread> Server::clientThreads;
+    MailManager* Server::mailManager;
 
-    Server::Server(int port, const std::string &mailSpoolDir) : mailSpoolDir(mailSpoolDir)
+    Server::Server(int port, const std::string &mailDir)
     {
         server_socket = socket(AF_INET, SOCK_STREAM, 0);
         if (server_socket == -1)
@@ -35,11 +30,9 @@ namespace TW_Mailer
 
         signal(SIGINT, signalHandler);
 
-        // Ensure the mail-spool directory exists
-        if (!fs::exists(mailSpoolDir))
-        {
-            fs::create_directories(mailSpoolDir);
-        }
+        setupCommandHandlers();
+
+        mailManager = new MailManager(mailDir);
     }
 
     Server::~Server()
@@ -63,6 +56,15 @@ namespace TW_Mailer
                 t.join();
             }
         }
+    }
+
+    void Server::setupCommandHandlers()
+    {
+        commandHandler[SEND] = ServerHandler::handleSend;
+        commandHandler[LIST] = ServerHandler::handleList;
+        commandHandler[READ] = ServerHandler::handleRead;
+        commandHandler[DEL] = ServerHandler::handleDel;
+        commandHandler[QUIT] = ServerHandler::handleQuit;
     }
 
     void Server::signalHandler(int signum)
@@ -125,19 +127,31 @@ namespace TW_Mailer
 
     void Server::handleClient(int client_socket)
     {
-        std::string message;
+        Message message;
         do
         {
-            message = receiveMessage(client_socket);
-            if (message.empty())
+            try
             {
-                break;
+                message = Message::parse(NetUtilities::receiveMessageStr(client_socket));
+
+                if (!commandHandler.contains(message.command))
+                {
+                    NetUtilities::sendMessageStr(client_socket, Message{ERR, "Invalid Command"}.serialize());
+                    return;
+                }
+
+                NetUtilities::sendMessageStr(client_socket, commandHandler[message.command](message).serialize());
+            }
+            catch (std::exception &e)
+            {
+                NetUtilities::sendMessageStr(client_socket, Message{ERR, e.what()}.serialize());
+            }
+            catch (ErrorCode &err)
+            {
+                NetUtilities::sendMessageStr(client_socket, createErrorMessage(err).serialize());
             }
 
-            std::cout << "Command received: " << message << std::endl;
-            processMessage(client_socket, message);
-
-        } while (isRunning && message != "QUIT\n");
+        } while (isRunning && message.command != QUIT);
 
         if (shutdown(client_socket, SHUT_RDWR) == -1)
         {
@@ -151,119 +165,25 @@ namespace TW_Mailer
         std::cout << "Client disconnected" << std::endl;
     }
 
-    void Server::processMessage(int client_socket, const std::string &command)
+    Message Server::createErrorMessage(ErrorCode code)
     {
-        std::istringstream iss(command);
-        std::string cmd;
-        iss >> cmd;
+        std::string msg;
 
-        switch(cmd.c_str()) {
-            case "SEND":
-
+        switch (code)
+        {
+            case USER_NOT_FOUND:
+                msg = "User not found";
+                break;
+            case INVALID_MAIL_INDEX:
+                msg = "Mail index invalid";
+                break;
+            case PARSING_ERROR:
+                msg = "Error while parsing message";
+                break;
+            default:
+                msg = "Unknown server error";
         }
 
-        if (cmd == "SEND")
-        {
-            std::string sender;
-            iss >> sender;
-            if (validateUsername(sender))
-            {
-                sendMail(client_socket, sender);
-                sendMessage(client_socket, "Yuhu");
-            }
-            else
-            {
-                sendMessage(client_socket, "ERR\n");
-            }
-        }
-        else if (cmd == "LIST")
-        {
-            std::string username;
-            iss >> username;
-            listMessages(client_socket, username);
-        }
-        else if (cmd == "READ")
-        {
-            std::string username;
-            int messageNumber;
-            iss >> username >> messageNumber;
-            readMessage(client_socket, username, messageNumber);
-        }
-        else if (cmd == "DEL")
-        {
-            std::string username;
-            int messageNumber;
-            iss >> username >> messageNumber;
-            deleteMessage(client_socket, username, messageNumber);
-        }
-        else if (cmd == "QUIT")
-        {
-            sendMessage(client_socket, "OK\n");
-        }
-        else
-        {
-            sendMessage(client_socket, "ERR\n");
-        }
-    }
-
-    void Server::sendMail(int client_socket, const std::string &sender)
-    {
-        // Implementation of SEND command
-    }
-
-    void Server::listMessages(int client_socket, const std::string &username)
-    {
-        // Implementation of LIST command
-    }
-
-    void Server::readMessage(int client_socket, const std::string &username, int messageNumber)
-    {
-        // Implementation of READ command
-    }
-
-    void Server::deleteMessage(int client_socket, const std::string &username, int messageNumber)
-    {
-        // Implementation of DEL command
-    }
-
-    bool Server::validateUsername(const std::string &username)
-    {
-        return username.length() <= 8 && std::all_of(username.begin(), username.end(), [](char c)
-        {
-            return std::isalnum(c);
-        });
-    }
-
-    std::string Server::getUserInboxPath(const std::string &username)
-    {
-        return mailSpoolDir + "/" + username + "_inbox";
-    }
-
-    std::string Server::receiveMessage(int client_socket)
-    {
-        char buffer[BUF];
-        int size = recv(client_socket, buffer, BUF - 1, 0);
-        if (size == -1)
-        {
-            perror("Receive error");
-            return "";
-        }
-
-        if (size == 0)
-        {
-            std::cout << "Client closed remote socket" << std::endl;
-            return "";
-        }
-
-        buffer[size] = '\0';
-        return std::string(buffer);
-    }
-
-    void Server::sendMessage(int client_socket, const std::string &message)
-    {
-        if (send(client_socket, message.c_str(), message.size(), 0) == -1)
-        {
-            perror("Send error");
-        }
+        return Message{ERR, msg};
     }
 } // TW_Mailer

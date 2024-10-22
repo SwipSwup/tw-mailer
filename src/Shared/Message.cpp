@@ -1,40 +1,56 @@
-//
-// Created by david on 22/10/2024.
-//
-
 #include "Message.h"
 #include <sstream>
+#include <iostream>
+#include <utility>
+#include "ErrorCode.h"
 
 namespace TW_Mailer
 {
-    Message* Message::Parse(std::string string)
+    Message Message::parse(std::string string)
     {
-        Message* message = new Message();
-        std::istringstream stream(string);
-        std::string line;
-
-        if (std::getline(stream, line))
+        Message message;
+        try
         {
-            message->command = static_cast<MessageCmd>(std::stoi(line));
-        }
+            std::istringstream stream(string);
+            std::string line;
 
-        while (std::getline(stream, line) && !line.empty())
-        {
-            size_t delimiterPos = line.find(':');
-            if (delimiterPos != std::string::npos)
+            if (std::getline(stream, line))
             {
-                std::string headerKey = line.substr(0, delimiterPos);
-                std::string headerValue = line.substr(delimiterPos + 1);
-                message->headers[headerKey] = headerValue;
+                message.command = static_cast<Command>(std::stoi(line));
             }
-        }
 
-        std::string body;
-        while (std::getline(stream, line))
-        {
-            body += line + "\n";
+            while (std::getline(stream, line) && !line.empty())
+            {
+                size_t delimiterPos = line.find(':');
+                if (delimiterPos != std::string::npos)
+                {
+                    std::string key = line.substr(0, delimiterPos);
+                    std::string value = line.substr(delimiterPos + 1);
+
+                    key.erase(0, key.find_first_not_of(" \t"));
+                    key.erase(key.find_last_not_of(" \t") + 1);
+                    value.erase(0, value.find_first_not_of(" \t"));
+                    value.erase(value.find_last_not_of(" \t") + 1);
+
+                    message.parameters[key] = value;
+                }
+            }
+
+            std::string body;
+            while (std::getline(stream, line))
+            {
+                body += line + "\n";
+            }
+            if (!body.empty() && body.back() == '\n')
+            {
+                body.pop_back();
+            }
+            message.body = body;
         }
-        message->message = body;
+        catch (const std::exception &e)
+        {
+            throw PARSING_ERROR;
+        }
 
         return message;
     }
@@ -45,15 +61,16 @@ namespace TW_Mailer
 
         stream << static_cast<int>(command) << "\n";
 
-        for (std::pair<std::string, std::string> header: headers)
+        for (std::pair<std::string, std::string> pair: parameters)
         {
-            stream << header.first << ":" << header.second << "\n";
+            stream << pair.first << ":" << pair.second << "\n";
         }
 
         stream << "\n";
 
-        stream << message;
+        stream << body;
 
         return stream.str();
     }
+}
 // TW_Mailer

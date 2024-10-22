@@ -243,5 +243,8 @@ CMakeFiles/tw_server.dir/MailServer.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/types/struct_sigstack.h \
  /usr/include/x86_64-linux-gnu/bits/sigthread.h \
  /usr/include/x86_64-linux-gnu/bits/signal_ext.h \
+ /mnt/g/FH/WS24/VERTS/tw-mailer/src/Server/../Shared/Message.h \
+ /mnt/g/FH/WS24/VERTS/tw-mailer/src/Server/../Shared/Command.h \
+ /mnt/g/FH/WS24/VERTS/tw-mailer/src/Server/../Shared/ErrorCode.h \
  /usr/include/c++/11/iostream /usr/include/c++/11/istream \
  /usr/include/c++/11/bits/istream.tcc

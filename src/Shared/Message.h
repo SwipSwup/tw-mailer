@@ -1,13 +1,9 @@
-//
-// Created by david on 22/10/2024.
-//
-
 #ifndef TW_MAILER_MESSAGE_H
 #define TW_MAILER_MESSAGE_H
 
 #include <string>
 #include <map>
-#include "MessageCmd.h"
+#include "Command.h"
 
 namespace TW_Mailer
 {
@@ -15,14 +11,14 @@ namespace TW_Mailer
     struct Message
     {
     public:
-        MessageCmd command;
-        std::string message;
+        Command command;
+        std::string body;
 
-        std::map<std::string, std::string> headers;
-
-        static Message* Parse(std::string string);
+        std::map<std::string, std::string> parameters;
 
         std::string serialize();
+
+        static Message parse(std::string string);
     };
 
 } // TW_Mailer

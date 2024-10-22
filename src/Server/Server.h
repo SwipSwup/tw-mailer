@@ -1,7 +1,3 @@
-//
-// Created by david on 22/10/2024.
-//
-
 #ifndef TW_MAILER_SERVER_H
 #define TW_MAILER_SERVER_H
 
@@ -15,40 +11,36 @@
 #include <vector>
 #include <map>
 #include <csignal>
-
-#define BUF 1024
+#include "../Shared/Message.h"
+#include "../Shared/ErrorCode.h"
 
 namespace TW_Mailer
 {
+    class MailManager;
     class Server {
     public:
         Server(int port, const std::string& mailSpoolDir);
         ~Server();
-
-        bool start();
-        void run();
+        static MailManager* mailManager;
         static void signalHandler(int signum);
 
     private:
         static int server_socket;
         struct sockaddr_in server_address{};
-        std::string mailSpoolDir;
         static bool isRunning;
 
+        std::map<Command, Message (*)(Message)> commandHandler;
+        void setupCommandHandlers();
+
+    public:
+        bool start();
+        void run();
+
+    private:
         void handleClient(int client_socket);
-        std::string receiveMessage(int client_socket);
-        void sendMessage(int client_socket, const std::string& message);
-        void processMessage(int client_socket, const std::string& command);
-
-        // Helper functions
-        void sendMail(int client_socket, const std::string& sender);
-        void listMessages(int client_socket, const std::string& username);
-        void readMessage(int client_socket, const std::string& username, int messageNumber);
-        void deleteMessage(int client_socket, const std::string& username, int messageNumber);
-        bool validateUsername(const std::string& username);
-        std::string getUserInboxPath(const std::string& username);
-
         std::vector<std::thread> clientThreads;
+
+        Message createErrorMessage(ErrorCode code);
     };
 
 } // TW_Mailer

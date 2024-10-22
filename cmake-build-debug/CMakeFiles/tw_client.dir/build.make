@@ -111,26 +111,41 @@ CMakeFiles/tw_client.dir/src/Shared/Message.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tw_client.dir/src/Shared/Message.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/g/FH/WS24/VERTS/tw-mailer/src/Shared/Message.cpp -o CMakeFiles/tw_client.dir/src/Shared/Message.cpp.s
 
-CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o: CMakeFiles/tw_client.dir/flags.make
-CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o: ../src/Shared/MessageCmd.cpp
-CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o: CMakeFiles/tw_client.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o -MF CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o.d -o CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o -c /mnt/g/FH/WS24/VERTS/tw-mailer/src/Shared/MessageCmd.cpp
+CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o: CMakeFiles/tw_client.dir/flags.make
+CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o: ../src/Shared/NetUtilities.cpp
+CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o: CMakeFiles/tw_client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o -MF CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o.d -o CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o -c /mnt/g/FH/WS24/VERTS/tw-mailer/src/Shared/NetUtilities.cpp
 
-CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/g/FH/WS24/VERTS/tw-mailer/src/Shared/MessageCmd.cpp > CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.i
+CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/g/FH/WS24/VERTS/tw-mailer/src/Shared/NetUtilities.cpp > CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.i
 
-CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/g/FH/WS24/VERTS/tw-mailer/src/Shared/MessageCmd.cpp -o CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.s
+CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/g/FH/WS24/VERTS/tw-mailer/src/Shared/NetUtilities.cpp -o CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.s
+
+CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o: CMakeFiles/tw_client.dir/flags.make
+CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o: ../src/Client/ClientHandlers.cpp
+CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o: CMakeFiles/tw_client.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o -MF CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o.d -o CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o -c /mnt/g/FH/WS24/VERTS/tw-mailer/src/Client/ClientHandlers.cpp
+
+CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /mnt/g/FH/WS24/VERTS/tw-mailer/src/Client/ClientHandlers.cpp > CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.i
+
+CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /mnt/g/FH/WS24/VERTS/tw-mailer/src/Client/ClientHandlers.cpp -o CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.s
 
 # Object files for target tw_client
 tw_client_OBJECTS = \
 "CMakeFiles/tw_client.dir/MailClient.cpp.o" \
 "CMakeFiles/tw_client.dir/src/Client/Client.cpp.o" \
 "CMakeFiles/tw_client.dir/src/Shared/Message.cpp.o" \
-"CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o"
+"CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o" \
+"CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o"
 
 # External object files for target tw_client
 tw_client_EXTERNAL_OBJECTS =
@@ -138,10 +153,11 @@ tw_client_EXTERNAL_OBJECTS =
 tw_client: CMakeFiles/tw_client.dir/MailClient.cpp.o
 tw_client: CMakeFiles/tw_client.dir/src/Client/Client.cpp.o
 tw_client: CMakeFiles/tw_client.dir/src/Shared/Message.cpp.o
-tw_client: CMakeFiles/tw_client.dir/src/Shared/MessageCmd.cpp.o
+tw_client: CMakeFiles/tw_client.dir/src/Shared/NetUtilities.cpp.o
+tw_client: CMakeFiles/tw_client.dir/src/Client/ClientHandlers.cpp.o
 tw_client: CMakeFiles/tw_client.dir/build.make
 tw_client: CMakeFiles/tw_client.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable tw_client"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable tw_client"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/tw_client.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
