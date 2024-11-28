@@ -6,6 +6,7 @@
 
 namespace TW_Mailer
 {
+    //Parses the message string to a message object
     Message Message::parse(std::string string)
     {
         Message message;
@@ -49,12 +50,14 @@ namespace TW_Mailer
         }
         catch (const std::exception &e)
         {
+            //Throw pasting error if something goes wrong
             throw PARSING_ERROR;
         }
 
         return message;
     }
 
+    //Serailze the message into a string. Makes it easy to send information
     std::string Message::serialize()
     {
         std::ostringstream stream;

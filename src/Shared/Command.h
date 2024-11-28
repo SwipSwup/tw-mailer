@@ -3,10 +3,12 @@
 
 namespace TW_Mailer
 {
+    //All available commands
     enum Command
     {
         OK,
         ERR,
+        LOGIN,
         SEND,
         LIST,
         READ,

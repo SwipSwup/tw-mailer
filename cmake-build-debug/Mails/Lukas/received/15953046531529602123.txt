@@ -1,0 +1,7 @@
+Sender: if23b030
+Receiver: Lukas
+
+Subject: test
+Hello
+
+das is ein test

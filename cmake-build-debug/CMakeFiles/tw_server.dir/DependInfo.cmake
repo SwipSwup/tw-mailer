@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/g/FH/WS24/VERTS/tw-mailer/MailServer.cpp" "CMakeFiles/tw_server.dir/MailServer.cpp.o" "gcc" "CMakeFiles/tw_server.dir/MailServer.cpp.o.d"
+  "/mnt/g/FH/WS24/VERTS/tw-mailer/src/Server/LdapHandler.cpp" "CMakeFiles/tw_server.dir/src/Server/LdapHandler.cpp.o" "gcc" "CMakeFiles/tw_server.dir/src/Server/LdapHandler.cpp.o.d"
   "/mnt/g/FH/WS24/VERTS/tw-mailer/src/Server/MailManager/MailManager.cpp" "CMakeFiles/tw_server.dir/src/Server/MailManager/MailManager.cpp.o" "gcc" "CMakeFiles/tw_server.dir/src/Server/MailManager/MailManager.cpp.o.d"
   "/mnt/g/FH/WS24/VERTS/tw-mailer/src/Server/Server.cpp" "CMakeFiles/tw_server.dir/src/Server/Server.cpp.o" "gcc" "CMakeFiles/tw_server.dir/src/Server/Server.cpp.o.d"
   "/mnt/g/FH/WS24/VERTS/tw-mailer/src/Server/ServerHandler.cpp" "CMakeFiles/tw_server.dir/src/Server/ServerHandler.cpp.o" "gcc" "CMakeFiles/tw_server.dir/src/Server/ServerHandler.cpp.o.d"
@@ -16,8 +17,12 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/mnt/g/FH/WS24/VERTS/tw-mailer/src/Shared/NetUtilities.cpp" "CMakeFiles/tw_server.dir/src/Shared/NetUtilities.cpp.o" "gcc" "CMakeFiles/tw_server.dir/src/Shared/NetUtilities.cpp.o.d"
   )
 
-# Targets to which this target links.
-set(CMAKE_TARGET_LINKED_INFO_FILES
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_LINKED_INFO_FILES
+  )
+
+# Targets to which this target links which contain Fortran sources.
+set(CMAKE_Fortran_TARGET_FORWARD_LINKED_INFO_FILES
   )
 
 # Fortran module output directory.

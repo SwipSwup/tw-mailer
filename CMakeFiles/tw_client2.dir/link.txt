@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tw_client2.dir/MailClient.cpp.o CMakeFiles/tw_client2.dir/src/Client/Client.cpp.o CMakeFiles/tw_client2.dir/src/Shared/Message.cpp.o CMakeFiles/tw_client2.dir/src/Shared/NetUtilities.cpp.o CMakeFiles/tw_client2.dir/src/Client/ClientHandlers.cpp.o -o tw_client2 

@@ -1,5 +1,0 @@
-Sender: Lukas
-Receiver: David
-
-Subject: Test 2
-Das ist der zweite Test

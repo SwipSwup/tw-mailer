@@ -4,14 +4,27 @@
 
 namespace TW_Mailer
 {
+    Message ClientHandlers::handleLogin()
+    {
+        Message message {LOGIN};
+        std::string str;
+
+        std::cout << "Enter username: ";
+        std::getline(std::cin, str);
+        message.parameters["username"] = str;
+
+        std::cout << "Enter password: ";
+        std::getline(std::cin, str);
+        message.parameters["password"] = str;
+
+        return message;
+    }
+
+    //Ask the user all the information and build the message
     Message ClientHandlers::handleSend()
     {
         Message message {SEND};
         std::string str;
-
-        std::cout << "Enter sender username: ";
-        std::getline(std::cin, str);
-        message.parameters["sender"] = str;
 
         std::cout << "Enter receiver username: ";
         std::getline(std::cin, str);
@@ -36,11 +49,6 @@ namespace TW_Mailer
     Message ClientHandlers::handleList()
     {
         Message message {LIST};
-        std::string username;
-
-        std::cout << "Enter username: ";
-        std::getline(std::cin, username);
-        message.parameters["username"] = username;
 
         return message;
     }
@@ -48,15 +56,11 @@ namespace TW_Mailer
     Message ClientHandlers::handleRead()
     {
         Message message {READ};
-        std::string str;
-
-        std::cout << "Enter username: ";
-        std::getline(std::cin, str);
-        message.parameters["username"] = str;
+        std::string messageNumber;
 
         std::cout << "Enter message number: ";
-        std::getline(std::cin, str);
-        message.parameters["messageNumber"] = str;
+        std::getline(std::cin, messageNumber);
+        message.parameters["messageNumber"] = messageNumber;
 
         return message;
     }
@@ -64,15 +68,11 @@ namespace TW_Mailer
     Message ClientHandlers::handleDel()
     {
         Message message {DEL};
-        std::string str;
-
-        std::cout << "Enter username: ";
-        std::getline(std::cin, str);
-        message.parameters["username"] = str;
+        std::string messageNumber;
 
         std::cout << "Enter message number: ";
-        std::getline(std::cin, str);
-        message.parameters["messageNumber"] = str;
+        std::getline(std::cin, messageNumber);
+        message.parameters["messageNumber"] = messageNumber;
 
         return message;
     }

@@ -1,5 +1,0 @@
-Sender: David
-Receiver: Lukas
-
-Subject: Test
-Das ist ein Test

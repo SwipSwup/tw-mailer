@@ -7,6 +7,7 @@ namespace TW_Mailer
 {
     MailManager::MailManager(std::string mailDirectory) : mailDir(std::move(mailDirectory))
     {
+        // Create the mail folder if it doesnt exist
         if (!std::filesystem::exists(mailDir))
         {
             std::filesystem::create_directories(mailDir);
@@ -18,6 +19,7 @@ namespace TW_Mailer
         std::string senderDir = mailDir + "/" + mail.sender + SENT_DIRECTORY;
         std::string receiverDir = mailDir + "/" + mail.receiver + RECEIVED_DIRECTORY;
 
+        //check if the coresponding folders exist
         if (!std::filesystem::exists(senderDir))
         {
             std::filesystem::create_directories(senderDir);
@@ -28,10 +30,12 @@ namespace TW_Mailer
             std::filesystem::create_directories(receiverDir);
         }
 
+        //create the Mail files
         createMailFile(mail, senderDir);
         createMailFile(mail, receiverDir);
     }
 
+    //Helper function to create the mail file
     void MailManager::createMailFile(const Mail &mail, const std::string &dir) const
     {
         std::string filePath =
@@ -46,6 +50,7 @@ namespace TW_Mailer
         file.close();
     }
 
+    //Looks through all the folders and return the subjects as one string
     std::string MailManager::getAllMails(const std::string &username)
     {
         std::stringstream stream;
@@ -54,6 +59,7 @@ namespace TW_Mailer
 
         int index = 1;
 
+        //Throw custom error code if the user doesnt exist
         if(!std::filesystem::exists(mailDir + "/" + username)) {
             throw USER_NOT_FOUND;
         }
@@ -74,6 +80,7 @@ namespace TW_Mailer
         return stream.str();
     }
 
+    //Another helper function
     std::string MailManager::getAllSubjects(const std::string &sentDir, int* index) const
     {
         std::stringstream stream;
@@ -95,6 +102,7 @@ namespace TW_Mailer
         return stream.str();
     }
 
+    //Gets all the files as on vector
     std::vector<std::string> MailManager::getAllFiles(const std::string& username) {
         std::string receivedFolder = mailDir + "/" + username + RECEIVED_DIRECTORY;
         std::string sentFolder = mailDir + "/" + username + SENT_DIRECTORY;
@@ -118,12 +126,14 @@ namespace TW_Mailer
 
     std::string MailManager::getMail(const std::string &username, int id)
     {
+        //Throw error if the user deosnt exist
         if(!std::filesystem::exists(mailDir + "/" + username)) {
             throw USER_NOT_FOUND;
         }
 
         std::vector<std::string> mails = getAllFiles(username);
 
+        //Throw error if the index is out of bounds
         if (id < 1 || id > mails.size())
         {
             throw INVALID_MAIL_INDEX;
@@ -141,6 +151,7 @@ namespace TW_Mailer
 
     void MailManager::deleteMail(std::string username, int id)
     {
+        //Basically the same as get mail
         if(!std::filesystem::exists(mailDir + "/" + username)) {
             throw USER_NOT_FOUND;
         }

@@ -3,6 +3,8 @@ project(tw_mailer)
 
 set(CMAKE_CXX_STANDARD 20)
 
+
+
 add_executable(tw_server
         MailServer.cpp
         src/Server/Server.cpp
@@ -18,7 +20,11 @@ add_executable(tw_server
         src/Server/MailManager/MailManager.h
         src/Server/MailManager/Mail.h
         src/Shared/ErrorCode.h
+        src/Server/LdapHandler.cpp
+        src/Server/LdapHandler.h
 )
+
+target_link_libraries(tw_server PRIVATE ldap)
 
 add_executable(tw_client
         MailClient.cpp
@@ -30,7 +36,8 @@ add_executable(tw_client
         src/Shared/NetUtilities.cpp
         src/Shared/NetUtilities.h
         src/Client/ClientHandlers.cpp
-        src/Client/ClientHandlers.h)
+        src/Client/ClientHandlers.h
+)
 
 add_executable(tw_client2
         MailClient.cpp
@@ -42,5 +49,6 @@ add_executable(tw_client2
         src/Shared/NetUtilities.cpp
         src/Shared/NetUtilities.h
         src/Client/ClientHandlers.cpp
-        src/Client/ClientHandlers.h)
+        src/Client/ClientHandlers.h
+)
 

@@ -11,6 +11,7 @@
 
 namespace TW_Mailer
 {
+    class LdapHandler;
     class Client {
     public:
         Client(const std::string& server_ip, int server_port);
@@ -20,11 +21,15 @@ namespace TW_Mailer
         void run();
 
     private:
-        int client_socket;
+        int server_socket;
+        std::string username;
+
         struct sockaddr_in server_address{};
         std::map<std::string, Message (*)()> commandHandler;
 
-        void setupCommandHandlers();
+        void setupCommandHandlersPreLogin();
+        void setupCommandHandlersPostLogin();
+
     };
 
 } // TW_Mailer

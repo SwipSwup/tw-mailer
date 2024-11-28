@@ -1,4 +1,4 @@
 /usr/bin/cmake -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles" -S /mnt/g/FH/WS24/VERTS/tw-mailer -B /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug
--- Configuring done
--- Generating done
+-- Configuring done (0.1s)
+-- Generating done (0.3s)
 -- Build files have been written to: /mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug

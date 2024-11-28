@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tw_server.dir/MailServer.cpp.o CMakeFiles/tw_server.dir/src/Server/Server.cpp.o CMakeFiles/tw_server.dir/src/Shared/Message.cpp.o CMakeFiles/tw_server.dir/src/Server/ServerHandler.cpp.o CMakeFiles/tw_server.dir/src/Shared/NetUtilities.cpp.o CMakeFiles/tw_server.dir/src/Server/MailManager/MailManager.cpp.o -o tw_server 

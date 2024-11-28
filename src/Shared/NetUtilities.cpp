@@ -5,6 +5,7 @@
 
 namespace TW_Mailer
 {
+    //Helper functions for sending data via sockets
     void NetUtilities::sendMessageStr(int socket, const std::string &message)
     {
         if (send(socket, message.c_str(), message.size(), 0) == -1)

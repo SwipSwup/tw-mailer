@@ -9,6 +9,7 @@ namespace TW_Mailer
     class ServerHandler
     {
     public:
+        static Message handleLogin(Message message);
         static Message handleSend(Message message);
         static Message handleList(Message message);
         static Message handleRead(Message message);

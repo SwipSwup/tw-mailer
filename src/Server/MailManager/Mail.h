@@ -5,6 +5,7 @@
 
 namespace TW_Mailer
 {
+    //Container to store data for mails
     struct Mail
     {
     public:

@@ -4,7 +4,7 @@
 int main(int argc, char* argv[])
 {
     if(argc < 2) {
-        std::cout << "Invalid argument count";
+        perror("Invalid argument count");
         return EXIT_FAILURE;
     }
 
@@ -12,6 +12,7 @@ int main(int argc, char* argv[])
 
     if (!client.connectToServer())
     {
+        perror("Unable to connect to mail server");
         return EXIT_FAILURE;
     }
 

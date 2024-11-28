@@ -9,6 +9,7 @@ namespace TW_Mailer
     class ClientHandlers
     {
     public:
+        static Message handleLogin();
         static Message handleSend();
         static Message handleList();
         static Message handleRead();

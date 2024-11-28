@@ -1,5 +1,0 @@
-Sender: a
-Receiver: b
-
-Subject: s
-a

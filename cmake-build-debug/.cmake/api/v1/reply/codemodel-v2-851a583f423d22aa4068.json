@@ -1,0 +1,78 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.22"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "tw_mailer",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "tw_client::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tw_client-Debug-f86e0ab4e3c7073f294c.json",
+					"name" : "tw_client",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tw_client2::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tw_client2-Debug-93e903b85135b5f4d322.json",
+					"name" : "tw_client2",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "tw_server::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-tw_server-Debug-2106e55accf377489d21.json",
+					"name" : "tw_server",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/mnt/g/FH/WS24/VERTS/tw-mailer/cmake-build-debug",
+		"source" : "/mnt/g/FH/WS24/VERTS/tw-mailer"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}
